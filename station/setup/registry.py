@@ -7,6 +7,10 @@ class ShiftRegistry:
     def __init__(self, database):
         self._database = database
 
+    @property
+    def database(self):
+        return self._database
+
     @staticmethod
     def install_schema(connection):
         connection.execute('''

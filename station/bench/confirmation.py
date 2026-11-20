@@ -27,6 +27,10 @@ class SourceConfirmation:
     def attempts(self, exposure_id):
         return self._attempts.get(exposure_id, 0)
 
+    @property
+    def checkpoint(self):
+        return self._checkpoint
+
     def _visit_checkpoint(self, point):
         if self._checkpoint is not None:
             self._checkpoint(point)
